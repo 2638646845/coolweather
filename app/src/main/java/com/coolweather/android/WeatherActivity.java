@@ -25,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.coolweather.android.gson.Forecast;
 import com.coolweather.android.gson.Lifestyle;
 import com.coolweather.android.gson.Weather;
+import com.coolweather.android.service.AutoUpdateService;
 import com.coolweather.android.util.HttpUtil;
 import com.coolweather.android.util.Utility;
 
@@ -306,7 +307,8 @@ public class WeatherActivity extends AppCompatActivity {
         }
         weatherLayout.setVisibility(View.VISIBLE);
 
-
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
 
 
 
